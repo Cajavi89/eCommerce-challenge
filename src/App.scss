@@ -1,0 +1,15 @@
+@import "variables";
+
+.App {
+  text-align: center;
+  font-family: $fontFamily;
+  background-repeat: no-repeat;
+  background-position: top right;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.menu-wrapper {
+  background-color: #fff;
+  border: solid 1px black;
+}
