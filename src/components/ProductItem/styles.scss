@@ -1,0 +1,75 @@
+@import "../../variables.scss";
+
+.menu-container {
+  background-color: #fff;
+  width: 350px;
+  padding-left: 20px;
+  box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+ul > li:first-child {
+  padding-top: 50px;
+}
+ul > li:last-child {
+  padding-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  background-color: rgba(233, 121, 178, 0.2);
+  margin: 30px auto;
+  border-bottom-left-radius: 10px;
+  max-width: 270px;
+  height: 98px;
+  padding-top: 8px;
+
+  &__image {
+    width: 100px;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+  }
+
+  &__info-plate {
+    left: 120px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    width: min-content;
+
+    &--plate-name {
+      font-size: 14px;
+      font-weight: 300;
+      width: 150px;
+    }
+
+    &--price {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    &--addPlate {
+      position: absolute;
+      background-color: #6b00f5;
+      color: white;
+      border: none;
+      width: 130px;
+      height: 32px;
+      border-radius: 20px;
+      font-weight: 700;
+      padding: 4px 18px;
+      bottom: -15px;
+      cursor: pointer;
+    }
+  }
+}
