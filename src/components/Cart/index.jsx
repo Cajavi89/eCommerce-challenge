@@ -9,7 +9,7 @@ const Cart = () =>{
   let grandTotal = ((0.0975 * totalPrice ) + totalPrice).toFixed(2)
 
   //agregar productos al carrito
-  function handleAddItem (data){
+  const handleAddItem = (data)=>{
     const currentProduct = itemCart.find(el=> el.id === data.id)
 
     if(currentProduct){
@@ -20,7 +20,7 @@ const Cart = () =>{
   }
 
   //restar cantidad de productos del carrito
-  function handleLessItem (data){
+  const handleLessItem =  (data) =>{
     //confirmar si el producto enviado desde el onClick existe en el carrito de compras
     const currentProduct = itemCart.find(el=> el.id === data.id)
 

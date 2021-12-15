@@ -3,7 +3,7 @@ import Cart from './components/Cart';
 import Menu from './components/Menu';
 import { CartContextProvider } from './context/cartContext';
 
-function App() {
+const App = () => {
   return (
     <CartContextProvider>
       <div className="App">

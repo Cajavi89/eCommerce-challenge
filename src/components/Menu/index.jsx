@@ -12,7 +12,7 @@ const Menu = () =>{
   },[])
 
   //agregar productos del llamado fetch al carrito de compras.
-  function handleAddItemToCart (data){
+  const handleAddItemToCart = (data) =>{
     const currentProduct = itemCart.find(el=> el.id === data.id)
 
     if(currentProduct){
@@ -28,7 +28,7 @@ const Menu = () =>{
   return(
       <ul className="menu-container">
         <h1 className="menu-container__title">To Go Menu</h1>
-        {product.map((product)=> <ProductItem key={product.id} data={product} handleAddItem={handleAddItemToCart} /> )}
+        {product.map((product)=> <ProductItem key={product.id} data={product} handleAddItemToCart={handleAddItemToCart} /> )}
       </ul>
   )
 
