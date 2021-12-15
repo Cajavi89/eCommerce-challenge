@@ -6,31 +6,29 @@ import ProductItem from '../ProductItem';
 
 const Menu = () =>{
   const [product, setProduct] = useState([])
-  const {item, setItem}= useContext(contextCartItems)
+  const {itemCart, setItemCart,totalPrice,setTotalPrice}= useContext(contextCartItems)
   useEffect(()=>{
     Fetch().then(el=>setProduct(el))
-    console.log(item);
-  },[item])
+  },[])
 
-  function handleAddItem (data){
-    const exist = item.find(el=> el.id === data.id)
-    if(exist){
-      setItem([...item,{...data['qty']= data['qty']+ 1}])
+  //agregar productos del llamado fetch al carrito de compras.
+  function handleAddItemToCart (data){
+    const currentProduct = itemCart.find(el=> el.id === data.id)
+
+    if(currentProduct){
+      const others = itemCart.filter(el=> el.id !== data.id)
+      setItemCart([{...data, qty: currentProduct.qty + 1},...others])
     }else{
-      setItem([...item,{...data,qty:1}])
+      setItemCart([{...data,qty:1},...itemCart])
     }
-
-
-
-
-
+    setTotalPrice(totalPrice + data.price)
   }
 
 
   return(
       <ul className="menu-container">
         <h1 className="menu-container__title">To Go Menu</h1>
-        {product.map((product)=> <ProductItem key={product.id} data={product} handleAddItem={handleAddItem} /> )}
+        {product.map((product)=> <ProductItem key={product.id} data={product} handleAddItem={handleAddItemToCart} /> )}
       </ul>
   )
 

@@ -1,7 +1,6 @@
 const URL = "/data.json"
 
 const Fetch = async () =>{
-  console.log('estoy en fetch')
 
   return fetch(URL)
     .then(res=>res.json())
